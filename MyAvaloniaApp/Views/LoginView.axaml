@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MyAvaloniaApp.ViewModels"
+             x:Class="MyAvaloniaApp.Views.LoginView"
+             x:DataType="vm:LoginViewModel">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Width="380" Spacing="12">
+
+            <TextBlock Text="Compendio del Aventurero"
+                       FontSize="26"
+                       FontWeight="Bold"
+                       Foreground="#B8860B"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <TextBlock Text="Usuario" />
+            <TextBox Text="{Binding Usuario}" />
+
+            <TextBlock Text="Contraseña" Margin="0,8,0,0"/>
+            <TextBox Text="{Binding Contrasena}" PasswordChar="*" />
+
+            <Button Content="Ingresar"
+                    Command="{Binding IniciarSesionCommand}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Margin="0,15,0,0"/>
+
+            <TextBlock Text="{Binding MensajeError}"
+                       Foreground="#E06C6C"
+                       HorizontalAlignment="Center"
+                       TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+
+</UserControl>

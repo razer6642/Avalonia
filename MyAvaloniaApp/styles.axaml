@@ -1,0 +1,86 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Colores base: paleta oscura con acento dorado/bordo -->
+    <Style Selector="Window">
+        <Setter Property="Background" Value="#1A1512"/>
+    </Style>
+
+    <Style Selector="UserControl">
+        <Setter Property="Background" Value="#1A1512"/>
+    </Style>
+
+    <!-- Texto general -->
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="#E8DCC4"/>
+        <Setter Property="FontFamily" Value="Georgia, Times New Roman, serif"/>
+    </Style>
+
+    <!-- Botones -->
+    <Style Selector="Button">
+        <Setter Property="Background" Value="#5C1A1A"/>
+        <Setter Property="Foreground" Value="#E8DCC4"/>
+        <Setter Property="BorderBrush" Value="#B8860B"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Padding" Value="14,8"/>
+        <Setter Property="FontFamily" Value="Georgia, Times New Roman, serif"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style Selector="Button:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="#7A2424"/>
+    </Style>
+
+    <Style Selector="Button:pressed /template/ ContentPresenter">
+        <Setter Property="Background" Value="#4A1414"/>
+    </Style>
+
+    <!-- Cajas de texto -->
+    <Style Selector="TextBox">
+        <Setter Property="Background" Value="#2A211C"/>
+        <Setter Property="Foreground" Value="#E8DCC4"/>
+        <Setter Property="BorderBrush" Value="#B8860B"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="CaretBrush" Value="#B8860B"/>
+        <Setter Property="Padding" Value="8"/>
+    </Style>
+
+    <!-- ListBox -->
+    <Style Selector="ListBox">
+        <Setter Property="Background" Value="#221B16"/>
+        <Setter Property="BorderBrush" Value="#B8860B"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+
+    <Style Selector="ListBoxItem">
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="4"/>
+    </Style>
+
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="#5C1A1A"/>
+    </Style>
+
+    <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="#3A2E24"/>
+    </Style>
+
+    <!-- TabControl (usado en la Ficha de Personaje) -->
+    <Style Selector="TabControl">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style Selector="TabItem">
+        <Setter Property="Foreground" Value="#E8DCC4"/>
+        <Setter Property="FontFamily" Value="Georgia, Times New Roman, serif"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
+    <Style Selector="TabItem:selected /template/ Border#PART_LayoutRoot">
+        <Setter Property="Background" Value="#5C1A1A"/>
+    </Style>
+
+</Styles>

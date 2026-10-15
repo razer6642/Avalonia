@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MyAvaloniaApp.ViewModels"
+             x:Class="MyAvaloniaApp.Views.InicioView"
+             x:DataType="vm:InicioViewModel">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Width="380" Spacing="15">
+
+            <TextBlock Text="Compendio del Aventurero"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="#B8860B"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,20"/>
+
+            <Button Content="Personaje"
+                    Command="{Binding IrAPersonajesCommand}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"/>
+
+            <Button Content="Cerrar Sesión"
+                    Command="{Binding CerrarSesionCommand}"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

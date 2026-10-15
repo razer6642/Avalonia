@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MyAvaloniaApp.ViewModels"
+             x:Class="MyAvaloniaApp.Views.AgregarPersonajeView"
+             x:DataType="vm:AgregarPersonajeViewModel">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Width="380" Spacing="10">
+
+            <TextBlock Text="{Binding Titulo}"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="#B8860B"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,15"/>
+
+            <TextBlock Text="Nombre" />
+            <TextBox Text="{Binding Nombre}" />
+
+            <TextBlock Text="Clase" Margin="0,8,0,0"/>
+            <ComboBox ItemsSource="{Binding Clases}"
+                      SelectedItem="{Binding ClaseSeleccionada}"
+                      PlaceholderText="Elegí una clase"
+                      HorizontalAlignment="Stretch" />
+
+            <TextBlock Text="Raza" Margin="0,8,0,0"/>
+            <ComboBox ItemsSource="{Binding Razas}"
+                      SelectedItem="{Binding RazaSeleccionada}"
+                      PlaceholderText="Elegí una raza"
+                      HorizontalAlignment="Stretch" />
+
+            <TextBlock Text="Nivel" Margin="0,8,0,0"/>
+            <TextBox Text="{Binding Nivel}" />
+
+            <TextBlock Text="{Binding Mensaje}"
+                       Foreground="#E06C6C"
+                       HorizontalAlignment="Center"
+                       TextWrapping="Wrap"/>
+
+            <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,15,0,0" HorizontalAlignment="Center">
+                <Button Content="Guardar" Command="{Binding GuardarCommand}" />
+                <Button Content="Volver" Command="{Binding VolverCommand}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

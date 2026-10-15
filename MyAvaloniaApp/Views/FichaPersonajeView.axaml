@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:MyAvaloniaApp.ViewModels"
+             x:Class="MyAvaloniaApp.Views.FichaPersonajeView"
+             x:DataType="vm:FichaPersonajeViewModel">
+
+    <Grid Margin="30" RowDefinitions="Auto,*,Auto">
+
+        <Border Grid.Row="0"
+                Background="#2A211C"
+                BorderBrush="#B8860B"
+                BorderThickness="1"
+                CornerRadius="4"
+                Padding="16"
+                Margin="0,0,0,20">
+            <StackPanel>
+                <TextBlock Text="{Binding Personaje.Nombre}"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="#B8860B"/>
+                <TextBlock Text="{Binding Personaje.Clase}" Foreground="#E8DCC4"/>
+                <TextBlock Text="{Binding Personaje.Raza}" Foreground="#A69378"/>
+                <TextBlock Text="{Binding Personaje.Nivel, StringFormat='Nivel {0}'}" Foreground="#A69378"/>
+            </StackPanel>
+        </Border>
+
+        <TabControl Grid.Row="1">
+            <TabItem Header="Habilidades">
+                <ItemsControl ItemsSource="{Binding Personaje.Habilidades}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <TextBlock Text="{Binding}" Margin="0,4" Foreground="#E8DCC4"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </TabItem>
+
+            <TabItem Header="Hechizos">
+                <ItemsControl ItemsSource="{Binding Personaje.Hechizos}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <TextBlock Text="{Binding}" Margin="0,4" Foreground="#E8DCC4"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Row="2" Margin="0,20,0,0" Spacing="8">
+            <TextBlock Text="{Binding Mensaje}"
+                    Foreground="#E06C6C"
+                    TextWrapping="Wrap"/>
+            <TextBlock Text="{Binding MensajeExito}"
+                    Foreground="#8FBC8F"
+                    TextWrapping="Wrap"/>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Volver" Command="{Binding VolverCommand}" />
+                <Button Content="Editar" Command="{Binding EditarCommand}" />
+                <Button Content="Exportar PDF" Command="{Binding ExportarPdfCommand}" />
+                <Button Content="Borrar" Command="{Binding BorrarCommand}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
